@@ -1,0 +1,5 @@
+<div class="tasks">
+    <todo-list [list]="todoList$ | async" (toggle)="onToggle($event)">
+        Tarefas
+    </todo-list>
+</div>
