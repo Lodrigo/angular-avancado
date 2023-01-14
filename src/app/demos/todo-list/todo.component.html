@@ -4,11 +4,13 @@
 
         <div class="form-group form-horizontal row">
             <label class="col-md-2 control-label" for="novaTarefa">Adicionar nova tarefa</label>
-            <div class="col-md-10">
+            <div class="col-md-9">
                 <input class="form-control" id="novaTarefa" type="text" placeholder="nova tarefa (requerido)" formControlName="novaTarefa" />
                 <span class="text-danger" *ngIf="displayMessage.novaTarefa">
                     <p [innerHTML]="displayMessage.novaTarefa"></p>
                 </span>
+            </div>
+            <div class="col-md-1">
                 <button class="btn btn-success" (click)="adicionarTarefa()" [disabled]="validarCampo()">+</button>
             </div>
         </div>
