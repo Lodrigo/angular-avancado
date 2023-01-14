@@ -1,0 +1,24 @@
+<div class="container main-container">
+
+    <form [formGroup]="cadastroTarefaNova">
+
+        <div class="form-group form-horizontal row">
+            <label class="col-md-2 control-label" for="novaTarefa">Adicionar nova tarefa</label>
+            <div class="col-md-10">
+                <input class="form-control" id="novaTarefa" type="text" placeholder="nova tarefa (requerido)" formControlName="novaTarefa" />
+                <span class="text-danger" *ngIf="displayMessage.novaTarefa">
+                    <p [innerHTML]="displayMessage.novaTarefa"></p>
+                </span>
+                <button class="btn btn-success" (click)="adicionarTarefa()" [disabled]="validarCampo()">+</button>
+            </div>
+        </div>
+    </form>
+
+    <br>
+
+    <div class="row text-center">
+        <tasks class="col-md-4"></tasks>
+        <tasks-iniciadas class="col-md-4"></tasks-iniciadas>
+        <tasks-finalizadas class="col-md-4"></tasks-finalizadas>
+    </div>
+</div>
