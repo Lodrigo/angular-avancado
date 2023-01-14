@@ -51,7 +51,7 @@ describe('TodoService', () => {
 
         //Ao chamar este método precisa ter uma subscribe, pois ele retorna uma observable e precisa completa-la
         service.getTodoList$.subscribe((result) => {
-            expect(result.length).toBe(5);
+            expect(result.length).toBe(8);
             expect(result).toEqual(todoList);
 
             console.log('RETORNO Ok', result);
