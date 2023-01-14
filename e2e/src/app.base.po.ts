@@ -1,8 +1,10 @@
+//Classe base para execução de métodos genéricos
 import { browser, by, element, ExpectedConditions } from 'protractor';
 
 export abstract class AppBasePage {
 
     constructor() {
+        //Abre o browser em janela maximizada
         browser.driver.manage().window().maximize();
     }
 
@@ -14,6 +16,7 @@ export abstract class AppBasePage {
         return browser.get(url) as Promise<any>;
     }
 
+    //Função de verificar a navegação quando um elemento for clicado
     navegarPorLink(link: string) {
         browser.wait(ExpectedConditions.elementToBeClickable(element(by.linkText(link)))).then(() => {
             return element(by.linkText(link)).click();
